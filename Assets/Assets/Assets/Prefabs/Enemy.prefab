@@ -132,7 +132,7 @@ MonoBehaviour:
   speed: 0
   vertical: 0
   changeTime: 3
-  smokeEffect: {fileID: 2858248442351761724, guid: 957c4910cbd16df4a9ad75f8fd88b941, type: 3}
+  SmokeEffect: {fileID: 0}
 --- !u!95 &-7594609430130934849
 Animator:
   serializedVersion: 5
@@ -211,7 +211,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9645ade057726c6428a54cc571053c6d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

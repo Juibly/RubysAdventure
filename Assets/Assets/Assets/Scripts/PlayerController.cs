@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     // Variables related to audio
     AudioSource audioSource;
 
+    // Variables Related to Particle Systems
+    [SerializeField] private ParticleSystem healthEffect = null;
+    [SerializeField] private ParticleSystem damageEffect = null;
 
     // Start is called before the first frame update
     void Start()
@@ -134,6 +137,16 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
+        // health particles
+        if(amount > 0)
+        {
+            healthEffect.Play();
+        }
+        else
+        {
+            // damage particles
+            damageEffect.Play();
+        }
     }
 
 

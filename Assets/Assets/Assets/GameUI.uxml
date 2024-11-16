@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="NPCDialogue" src="project://database/Assets/Assets/Assets/NPCDialogue.uxml?fileID=9197481963319205126&amp;guid=39f1125c7901f0b4abefe3a4529fd18e&amp;type=3#NPCDialogue" />
+    <ui:Template name="GameOverUI" src="project://database/Assets/Assets/Assets/GameOverUI.uxml?fileID=9197481963319205126&amp;guid=71e2bd963ed7b44419b4aeb0f1867e9e&amp;type=3#GameOverUI" />
     <ui:VisualElement name="HealthBarBG" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Assets/Assets/Art/Ruby/UI/UIHealthFrame.png?fileID=21300000&amp;guid=e04807cd45105ec409b00463fe6ab7b1&amp;type=3#UIHealthFrame&quot;); width: 420px; height: 180px; -unity-background-scale-mode: scale-to-fit;">
         <ui:VisualElement name="portrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/Assets/Art/Ruby/UI/CharacterPortrait.png?fileID=21300000&amp;guid=374193bc7008fa34ab9b2bbca376937b&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; position: absolute; width: 169px; height: 146px; top: 7px; left: 19px;" />
         <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; position: absolute; width: 208px; height: 201px; left: 180px; top: -16px; flex-basis: auto; -unity-background-scale-mode: scale-to-fit;">
@@ -7,4 +8,5 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Instance template="NPCDialogue" name="NPCDialogue" style="position: absolute; left: 10%; top: 70%; right: 10%; bottom: 10px;" />
+    <ui:Instance template="GameOverUI" name="GameOverUI" style="width: 744px; position: absolute; top: 244px; left: 180px;" />
 </ui:UXML>

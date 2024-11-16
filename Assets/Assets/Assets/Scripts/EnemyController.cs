@@ -89,7 +89,7 @@ public class EnemyController : MonoBehaviour
         GetComponent<Rigidbody2D>().simulated = false;
         animator.SetTrigger("Fixed");
         SmokeEffect.Stop();
-
+        gameObject.tag = ("fixedBot");
     }
 
 }

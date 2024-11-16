@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class PlayerController : MonoBehaviour
     // Variables related to audio
     AudioSource audioSource;
 
+    //Variables related to game over
+    bool canRestart;
+    GameObject brokenBots;
+
     // Variables Related to Particle Systems
     [SerializeField] private ParticleSystem healthEffect = null;
     [SerializeField] private ParticleSystem damageEffect = null;
@@ -45,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canRestart = false;
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -58,6 +64,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        brokenBots = GameObject.FindWithTag("brokenBot");
+
+        if (brokenBots == null)
+        {
+            MoveAction.Disable();
+            UIHandler.instance.DisplayGameOver();
+            canRestart = true;
+        }
+
+        if (canRestart = true)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                SceneManager.LoadScene("MainScene");
+        }
+
         move = MoveAction.ReadValue<Vector2>();
 
 
@@ -147,8 +168,15 @@ public class PlayerController : MonoBehaviour
             // damage particles
             damageEffect.Play();
         }
-    }
 
+        if (currentHealth <= 0)
+        {
+            MoveAction.Disable();
+            UIHandler.instance.DisplayGameOver();
+            canRestart = true;
+        }
+
+    }
 
 
     void Launch()
@@ -166,4 +194,5 @@ public class PlayerController : MonoBehaviour
     {
         audioSource.PlayOneShot(clip);
     }
+
 }

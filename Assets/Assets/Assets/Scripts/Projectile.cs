@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     Rigidbody2D rigidbody2d;
 
 
+
     // Awake is called when the Projectile GameObject is instantiated
     void Awake()
     {
@@ -35,7 +36,6 @@ public class Projectile : MonoBehaviour
         {
             enemy.Fix();
         }
-
 
         Destroy(gameObject);
     }

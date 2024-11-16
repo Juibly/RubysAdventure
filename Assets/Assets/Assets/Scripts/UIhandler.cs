@@ -13,6 +13,9 @@ public class UIHandler : MonoBehaviour
     private VisualElement m_NonPlayerDialogue;
     private float m_TimerDisplay;
 
+    // UI GameOver
+    private VisualElement m_GameOver;
+
 
     // Awake is called when the script instance is being loaded (in this situation, when the game scene loads)
     private void Awake()
@@ -32,6 +35,8 @@ public class UIHandler : MonoBehaviour
         m_NonPlayerDialogue.style.display = DisplayStyle.None;
         m_TimerDisplay = -1.0f;
 
+        m_GameOver = uiDocument.rootVisualElement.Q<VisualElement>("GameOverUI");
+        m_GameOver.style.display = DisplayStyle.None;
 
     }
 
@@ -64,4 +69,8 @@ public class UIHandler : MonoBehaviour
         m_TimerDisplay = displayTime;
     }
 
+    public void DisplayGameOver()
+    {
+        m_GameOver.style.display = DisplayStyle.Flex;
+    }
 }

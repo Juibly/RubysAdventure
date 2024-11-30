@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
     // Variables related to audio
     AudioSource audioSource;
     public AudioSource healthSource;
+    public AudioSource damageSource;
+    public AudioSource ammoSource;
+    public AudioSource loseSource;
+    public AudioSource winSource;
 
     //Variables related to game over
     bool canRestart;
@@ -46,9 +50,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ParticleSystem damageEffect = null;
     [SerializeField] private ParticleSystem speedEffect = null;
 
+    //Variables Related to Ammo
+    int ammo;
+
     // Start is called before the first frame update
     void Start()
     {
+        ammo = 2;
         canRestart = false;
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -67,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
         if (brokenBots == null)
         {
+            winSource.Play();
+            GetComponent<Collider2D>().enabled = false;
             MoveAction.Disable();
             UIHandler.instance.DisplayGameOver();
             canRestart = true;
@@ -114,7 +124,19 @@ public class PlayerController : MonoBehaviour
         // Detect input for projectile launch
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Launch();
+            if (ammo <= 0)
+            {
+                ammo = 0;
+            }
+            if (ammo == 0)
+            {
+                ammoSource.Play();
+            }
+            if (ammo > 0)
+            {
+                Launch();
+                ammo -= 1;
+            }
         }
         // Detect input for NPC interaction
         if (Input.GetKeyDown(KeyCode.X))
@@ -170,15 +192,19 @@ public class PlayerController : MonoBehaviour
         {
             // health particles
             healthEffect.Play();
+            healthSource.Play();
         }
         else
         {
             // damage particles
             damageEffect.Play();
+            damageSource.Play();
         }
 
         if (currentHealth <= 0)
         {
+            loseSource.Play();
+            GetComponent<Collider2D>().enabled = false;
             MoveAction.Disable();
             UIHandler.instance.DisplayGameOver();
             canRestart = true;
@@ -190,6 +216,14 @@ public class PlayerController : MonoBehaviour
     {
         speed = speed + amount;
         speedEffect.Play();
+        healthSource.Play();
+    }
+
+    public void ChangeAmmo(int amount)
+    {
+        ammo += amount;
+        speedEffect.Play();
+        healthSource.Play();
     }
 
     void Launch()

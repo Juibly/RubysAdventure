@@ -17,15 +17,14 @@ public class PlayerController : MonoBehaviour
     int currentHealth;
     public int health { get { return currentHealth; } }
 
-
     // Variables related to temporary invincibility
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float damageCooldown;
+
     // Variables related to animation
     Animator animator;
     Vector2 moveDirection = new Vector2(1, 0);
-
 
     // Variables related to projectiles
     public GameObject projectilePrefab;
@@ -34,10 +33,9 @@ public class PlayerController : MonoBehaviour
     // Variables related to npc
     public InputAction talkAction;
 
-
-
     // Variables related to audio
     AudioSource audioSource;
+    public AudioSource healthSource;
 
     //Variables related to game over
     bool canRestart;
@@ -46,6 +44,7 @@ public class PlayerController : MonoBehaviour
     // Variables Related to Particle Systems
     [SerializeField] private ParticleSystem healthEffect = null;
     [SerializeField] private ParticleSystem damageEffect = null;
+    [SerializeField] private ParticleSystem speedEffect = null;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +72,7 @@ public class PlayerController : MonoBehaviour
             canRestart = true;
         }
 
-        if (canRestart = true)
+        if (canRestart == true)
         {
             if (Input.GetKeyDown(KeyCode.R))
                 SceneManager.LoadScene("MainScene");
@@ -81,6 +80,14 @@ public class PlayerController : MonoBehaviour
 
         move = MoveAction.ReadValue<Vector2>();
 
+        if( (move.x != 0 || move.y != 0) && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        if(move.x == 0 && move.y == 0)
+        {
+            audioSource.Stop();
+        }
 
         if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
         {
@@ -158,9 +165,10 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
-        // health particles
+
         if(amount > 0)
         {
+            // health particles
             healthEffect.Play();
         }
         else
@@ -178,6 +186,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void ChangeSpeed(int amount)
+    {
+        speed = speed + amount;
+        speedEffect.Play();
+    }
 
     void Launch()
     {

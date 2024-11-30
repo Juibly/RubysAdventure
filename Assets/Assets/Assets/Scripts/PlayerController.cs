@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource ammoSource;
     public AudioSource loseSource;
     public AudioSource winSource;
+    public AudioClip Winsound;
 
     //Variables related to game over
     bool canRestart;
@@ -75,11 +76,7 @@ public class PlayerController : MonoBehaviour
 
         if (brokenBots == null)
         {
-            winSource.Play();
-            GetComponent<Collider2D>().enabled = false;
-            MoveAction.Disable();
-            UIHandler.instance.DisplayGameOver();
-            canRestart = true;
+            win();
         }
 
         if (canRestart == true)
@@ -119,7 +116,6 @@ public class PlayerController : MonoBehaviour
                 isInvincible = false;
             }
         }
-
 
         // Detect input for projectile launch
         if (Input.GetKeyDown(KeyCode.C))
@@ -242,4 +238,12 @@ public class PlayerController : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
+    public void win()
+    {
+        winSource.PlayOneShot(Winsound, 0.2F);
+        GetComponent<Collider2D>().enabled = false;
+        MoveAction.Disable();
+        UIHandler.instance.DisplayGameOver();
+        canRestart = true;
+    }
 }

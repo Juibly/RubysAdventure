@@ -37,6 +37,12 @@ public class Projectile : MonoBehaviour
             enemy.Fix();
         }
 
+        VendEnemyScript vend = other.collider.GetComponent<VendEnemyScript>();
+        if (vend != null)
+        {
+            vend.Fixv();
+        }
+
         Destroy(gameObject);
     }
 
@@ -48,6 +54,11 @@ public class Projectile : MonoBehaviour
             enemy.Fix();
         }
 
+        VendEnemyScript vend = other.GetComponent<Collider2D>().GetComponent<VendEnemyScript>();
+        if (vend != null)
+        {
+            vend.Fixv();
+        }
 
         Destroy(gameObject);
     }

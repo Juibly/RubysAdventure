@@ -15,7 +15,7 @@ https://freesound.org/people/PaulMorek/sounds/172136/
 2 metal weapon clicks by Michel Baradari (Used for out of Ammo feedback)
 https://opengameart.org/content/2-metal-weapon-clicks
 
-Win sound effect by Listener (Used for Win condition)
+Win sound effect by Listener AKA Maria Julanova (Used for Win condition)
 https://opengameart.org/content/win-sound-effect
 
 Machine Shutting Down by Cough-E (Used for Lose condition)

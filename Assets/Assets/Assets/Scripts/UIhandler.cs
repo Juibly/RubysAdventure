@@ -11,6 +11,7 @@ public class UIHandler : MonoBehaviour
     // UI dialogue window variables
     public float displayTime = 4.0f;
     private VisualElement m_NonPlayerDialogue;
+    //private VisualElement m_NonPlayerDialogue2;
     private float m_TimerDisplay;
 
     // UI GameOver
@@ -34,6 +35,10 @@ public class UIHandler : MonoBehaviour
         m_NonPlayerDialogue = uiDocument.rootVisualElement.Q<VisualElement>("NPCDialogue");
         m_NonPlayerDialogue.style.display = DisplayStyle.None;
         m_TimerDisplay = -1.0f;
+
+        //m_NonPlayerDialogue2 = uiDocument.rootVisualElement.Q<VisualElement>("DuckNPCDialogue");
+        //m_NonPlayerDialogue2.style.display = DisplayStyle.None;
+        //m_TimerDisplay = -1.0f;
 
         m_GameOver = uiDocument.rootVisualElement.Q<VisualElement>("GameOverUI");
         m_GameOver.style.display = DisplayStyle.None;

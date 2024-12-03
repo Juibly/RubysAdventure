@@ -11,8 +11,9 @@ public class UIHandler : MonoBehaviour
     // UI dialogue window variables
     public float displayTime = 4.0f;
     private VisualElement m_NonPlayerDialogue;
-    //private VisualElement m_NonPlayerDialogue2;
+    private VisualElement m_NonPlayerDialogue2;
     private float m_TimerDisplay;
+    private float m_TimerDisplay2;
 
     // UI GameOver
     private VisualElement m_GameOver;
@@ -36,9 +37,9 @@ public class UIHandler : MonoBehaviour
         m_NonPlayerDialogue.style.display = DisplayStyle.None;
         m_TimerDisplay = -1.0f;
 
-        //m_NonPlayerDialogue2 = uiDocument.rootVisualElement.Q<VisualElement>("DuckNPCDialogue");
-        //m_NonPlayerDialogue2.style.display = DisplayStyle.None;
-        //m_TimerDisplay = -1.0f;
+        m_NonPlayerDialogue2 = uiDocument.rootVisualElement.Q<VisualElement>("NPC2Dialogue");
+        m_NonPlayerDialogue2.style.display = DisplayStyle.None;
+        m_TimerDisplay2 = -1.0f;
 
         m_GameOver = uiDocument.rootVisualElement.Q<VisualElement>("GameOverUI");
         m_GameOver.style.display = DisplayStyle.None;
@@ -59,6 +60,16 @@ public class UIHandler : MonoBehaviour
 
 
         }
+        if (m_TimerDisplay2 > 0)
+        {
+            m_TimerDisplay2 -= Time.deltaTime;
+            if (m_TimerDisplay2 < 0)
+            {
+                m_NonPlayerDialogue2.style.display = DisplayStyle.None;
+            }
+
+
+        }
     }
 
 
@@ -72,6 +83,12 @@ public class UIHandler : MonoBehaviour
     {
         m_NonPlayerDialogue.style.display = DisplayStyle.Flex;
         m_TimerDisplay = displayTime;
+    }
+
+    public void DisplayDialogue2()
+    {
+        m_NonPlayerDialogue2.style.display = DisplayStyle.Flex;
+        m_TimerDisplay2 = displayTime;
     }
 
     public void DisplayGameOver()

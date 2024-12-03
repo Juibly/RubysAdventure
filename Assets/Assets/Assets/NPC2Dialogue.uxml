@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/Assets/Art/Ruby/UI/UIDialogueBox.png?fileID=21300000&amp;guid=c4592e9bd029fcc45843314f2192f59e&amp;type=3#UIDialogueBox&quot;); width: 100%; height: 100%;">
+        <ui:Label tabindex="-1" text=" Have you tried launching gears at foes?&#10; Just make sure you always have ammo &#10; by collecting those                               golden gears." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="width: 878px; height: 576px; margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px; font-size: 32px; -unity-font: initial; color: rgb(255, 255, 255); -unity-font-style: bold; position: relative;" />
+    </ui:VisualElement>
+</ui:UXML>

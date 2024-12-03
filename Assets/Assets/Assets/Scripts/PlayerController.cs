@@ -141,6 +141,7 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null)
             {
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                NPC2 character2 = hit.collider.GetComponent<NPC2>();
             }
         }
     }
@@ -152,9 +153,14 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+            NPC2 character2 = hit.collider.GetComponent<NPC2>();
             if (character != null)
             {
                 UIHandler.instance.DisplayDialogue();
+            }
+            else if (character2 != null)
+            {
+                UIHandler.instance.DisplayDialogue2();
             }
         }
     }

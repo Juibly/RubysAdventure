@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class VendEnemyScript : MonoBehaviour
 {
@@ -14,7 +11,6 @@ public class VendEnemyScript : MonoBehaviour
     public float changeTime;
     public bool vertical;
     public ParticleSystem SmokeEffect;
-    public GameObject projectilePrefab;
 
     //private variables
     Rigidbody2D rigidbody2d;
@@ -94,6 +90,5 @@ public class VendEnemyScript : MonoBehaviour
         animator.SetTrigger("Fixed");
         GetComponent<Rigidbody2D>().simulated = false;
         SmokeEffect.Stop();
-        gameObject.tag = ("fixedBot");
     }
 }

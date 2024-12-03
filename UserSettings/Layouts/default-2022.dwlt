@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1584
     height: 793
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 116
+  controlID: 119
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 62
+  controlID: 50
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 63
+  controlID: 51
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_CachedPref: 0
     m_ControlHash: 0
     m_PrefName: 
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 12566
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Zoom: -1
   m_ScrollPosition: {x: 0, y: 0}
   m_SelectedObject: {fileID: 0}
-  m_SelectedSpriteRectGUID: e80d616d3744e9f498ce1e498f42075b
+  m_SelectedSpriteRectGUID: 00000000000000000000000000000000
   m_LastUsedModuleTypeName: UnityEditor.U2D.Sprites.SpriteFrameModule
 --- !u!114 &16
 MonoBehaviour:
@@ -469,7 +469,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Assets/Assets/Prefabs
+    - Assets/Assets/Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -477,16 +477,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Assets/Assets/Prefabs
+  - Assets/Assets/Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\UNITYSCHOOLSTUFF\2D Rubys Adventure
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 35}
-    m_SelectedIDs: 6a7c0000
-    m_LastClickedID: 31850
-    m_ExpandedIDs: 000000007c7a00007e7a0000807a0000827a0000847a0000867a0000887a0000507c000000ca9a3b
+    scrollPos: {x: 0, y: 67}
+    m_SelectedIDs: 7a7b0000
+    m_LastClickedID: 31610
+    m_ExpandedIDs: 000000007c7900007e79000080790000827900008479000086790000887900007a7b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -514,7 +514,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007c7a00007e7a0000807a0000827a0000847a0000867a0000887a0000
+    m_ExpandedIDs: 000000007c7900007e7900008079000082790000847900008679000088790000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,7 +566,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 138}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 199
@@ -609,7 +609,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 50f9ffff50750000d8760000
+      m_ExpandedIDs: ccdcffff7eddffff68e2ffffb4ebffff66ecffff68f1fffffcfaffffd67b0000ba930000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
